@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOCK</title>
+</head>
+<script>
+    let a;
+    let t;
+    let d;
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    setInterval(() => {
+        a=new Date();
+        d=a.toLocaleDateString(undefined, options);
+        t=a.getHours()+" : "+a.getMinutes()+" : "+a.getSeconds();
+        // console.log(t);
+        document.getElementById("time").innerHTML = t;
+        document.getElementById("date").innerHTML = d ;
+        
+    }, 1000);
+</script>
+
+<style>
+    body{
+        background-color: black;
+    }
+    .brder{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        box-shadow:
+  
+      0 0 30px 25px #0ff; /* outer cyan */
+      
+        height: 400px;
+        width: 1000px;
+        border: cyan solid 5px;
+        border-radius: 25px;
+        ;
+        
+    }
+    #time{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 100px;
+        font-family: 'Times New Roman', Times, serif;
+        color: cyan;
+
+    }
+    #date{
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 35px;
+        font-family: 'Times New Roman', Times, serif;
+        color: cyan;
+
+    }
+
+
+</style>
+<body class="pbg">
+    <div class="brder"> 
+        
+        <span id="time"></span>
+        <span id="date"></span>
+
+    </div>
+    
+</body>
+
+</html>
