@@ -11,15 +11,21 @@
     let t;
     let d;
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    setInterval(() => {
-        a=new Date();
-        d=a.toLocaleDateString(undefined, options);
-        t=a.getHours()+" : "+a.getMinutes()+" : "+a.getSeconds();
+    
+    function updateClock() {
+        a = new Date();
+        d = a.toLocaleDateString(undefined, options);
+        t = a.getHours()+" : "+a.getMinutes()+" : "+a.getSeconds();
         // console.log(t);
         document.getElementById("time").innerHTML = t;
-        document.getElementById("date").innerHTML = d ;
-        
-    }, 1000);
+        document.getElementById("date").innerHTML = d;
+    }
+    
+    // Call once immediately to display the clock right away
+    updateClock();
+    
+    // Then set up interval to update every second
+    setInterval(updateClock, 1000);
 </script>
 
 <style>
