@@ -6,22 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLOCK</title>
 </head>
-<script>
-    let a;
-    let t;
-    let d;
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    setInterval(() => {
-        a=new Date();
-        d=a.toLocaleDateString(undefined, options);
-        t=a.getHours()+" : "+a.getMinutes()+" : "+a.getSeconds();
-        // console.log(t);
-        document.getElementById("time").innerHTML = t;
-        document.getElementById("date").innerHTML = d ;
-        
-    }, 1000);
-</script>
-
 <style>
     body{
         background-color: black;
@@ -76,6 +60,21 @@
 
     </div>
     
+    <script>
+        let a;
+        let t;
+        let d;
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        setInterval(() => {
+            a=new Date();
+            d=a.toLocaleDateString(undefined, options);
+            t=a.getHours()+" : "+a.getMinutes()+" : "+a.getSeconds();
+            // console.log(t);
+            document.getElementById("time").innerHTML = t;
+            document.getElementById("date").innerHTML = d ;
+            
+        }, 1000);
+    </script>
 </body>
 
 </html>
